@@ -1,0 +1,84 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 95vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+.showcase h2 {
+    color: #4682A4;
+}
+
+.welcomeTitle {
+  text-align: center;
+  color: #4682a9;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.home-button {
+  display: block;
+  width: 40%;
+  text-align: center;
+  text-decoration: none;
+  color: #4682a9;
+  background-color: #91C8E4;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  margin-top: 25px;
+  padding-left: 10px; 
+  padding-right: 10px; 
+}
+
+.home-button:hover {
+  background-color: rgb(116, 155, 194);
+  color: rgba(000, 000, 000, 0.75);
+}
+
+.showcase {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+    height: 50%;
+}
+
+.card-wrap {
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px 20px 20px 20px;
+    border: #4682A9 solid 2px;
+    justify-content: space-evenly;
+    background-color: rgba(145, 200, 228, 0.6);
+}
+
+.showcase-card {
+    color: black;
+    background-color: rgb(145, 200, 228, 0.5);
+    border: #4682A4 solid 2px;
+    width: fit-content;
+    height: 30vh;
+    text-align: center;
+}
+
+.showcase-card img {
+    height: 100%;
+    width: auto;
+}
+
+.showcase-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    color: black;
+}

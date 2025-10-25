@@ -1,0 +1,11 @@
+.grid-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.grid-overlay line {
+  stroke: #e6e6e6;
+  stroke-width: 1;
+}

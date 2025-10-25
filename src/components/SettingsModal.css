@@ -1,0 +1,69 @@
+.settings-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.settings-modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px;
+  width: 340px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.settings-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.settings-form {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-label {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.settings-input {
+  padding: 8px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.settings-apply {
+  margin-top: 6px;
+  background: #111827;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}

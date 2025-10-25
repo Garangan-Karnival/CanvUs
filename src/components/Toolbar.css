@@ -1,0 +1,44 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  padding: 8px 0;
+  flex-wrap: wrap;
+  color: black;
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.color-input {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e5e7eb;
+  padding: 2px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.stroke-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: black;
+}
+
+.stroke-btn {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.stroke-value {
+  font-size: 13px;
+  color: #374151;
+}
