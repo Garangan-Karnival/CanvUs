@@ -29,8 +29,9 @@ export default function Community() {
   }
 
   const handleShare = () => {
-    if (!preview) return alert('Please choose an image to share')
-    const newPost = addPost({ image: preview, caption, author: currentUser })
+    // allow posts with either an image or a caption (or both)
+    if (!preview && (!caption || caption.trim() === '')) return alert('Please provide an image or a caption to share')
+    const newPost = addPost({ image: preview || null, caption, author: currentUser })
     setPosts((p) => [newPost, ...p])
     setCaption('')
     setPreview(null)
@@ -110,9 +111,9 @@ export default function Community() {
         {posts.length === 0 && <p>No posts yet.</p>}
         {posts.map((post) => (
           <article key={post.id} className="post">
-            <img src={post.image} alt={post.caption || 'post image'} className="post-image" />
+            {post.image && <img src={post.image} alt={post.caption || 'post image'} className="post-image" />}
             <div className="post-body">
-              <p className="post-caption">{post.caption}</p>
+              {post.caption && <p className="post-caption">{post.caption}</p>}
               <p className="post-meta">by <b>{post.author}</b></p>
               <div className="comments">
                 {renderComments(post)}
