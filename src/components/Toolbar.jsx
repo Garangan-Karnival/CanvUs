@@ -1,5 +1,4 @@
 import React from 'react';
-import { Palette, Pencil, Eraser, Grid, Download, X, Settings, Minus, Plus, RotateCcw, RotateCw, Square, Circle } from 'lucide-react';
 import ToolButton from './ToolButton.jsx';
 import './Toolbar.css';
 
@@ -10,13 +9,14 @@ const Toolbar = ({
   historyIndex, historyLength
 }) => (
   <div className="toolbar">
-    <ToolButton icon={RotateCcw} onClick={handleUndo} label="Undo" disabled={historyIndex <= 0} />
-    <ToolButton icon={RotateCw} onClick={handleRedo} label="Redo" disabled={historyIndex >= historyLength - 1} />
+  <ToolButton iconName="undo" onClick={handleUndo} label="Undo" disabled={historyIndex <= 0} />
+  <ToolButton iconName="redo" onClick={handleRedo} label="Redo" disabled={historyIndex >= historyLength - 1} />
 
-    <ToolButton icon={Pencil} onClick={() => setTool('pencil')} label="Pencil" active={tool === 'pencil'} />
-    <ToolButton icon={Eraser} onClick={() => setTool('eraser')} label="Eraser" active={tool === 'eraser'} />
-    <ToolButton icon={Square} onClick={() => setTool('rectangle')} label="Rectangle" active={tool === 'rectangle'} />
-    <ToolButton icon={Circle} onClick={() => setTool('circle')} label="Circle" active={tool === 'circle'} />
+  <ToolButton iconName="edit" onClick={() => setTool('pencil')} label="Pencil" active={tool === 'pencil'} />
+  {/* Use 'close' (X) as the eraser icon per request */}
+  <ToolButton iconName="close" onClick={() => setTool('eraser')} label="Eraser" active={tool === 'eraser'} />
+  <ToolButton iconName="crop_square" onClick={() => setTool('rectangle')} label="Rectangle" active={tool === 'rectangle'} />
+  <ToolButton iconName="circle" onClick={() => setTool('circle')} label="Circle" active={tool === 'circle'} />
 
     <div className="color-picker" title="Select Color">
       <input
@@ -25,19 +25,20 @@ const Toolbar = ({
         onChange={(e) => { setColor(e.target.value); setTool('pencil'); }}
         className="color-input"
       />
-      <Palette size={24} style={{ color }} />
+  <span className="material-icons" style={{ color, fontSize: 20 }}>palette</span>
     </div>
 
     <div className="stroke-control">
-      <button onClick={() => setLineWidth(p => Math.max(1, p - 1))} className="stroke-btn">-</button>
+  <ToolButton iconName="remove" onClick={() => setLineWidth(p => Math.max(1, p - 1))} label="Decrease stroke" />
       <span className="stroke-value">{lineWidth}px</span>
-      <button onClick={() => setLineWidth(p => Math.min(50, p + 1))} className="stroke-btn">+</button>
+  <ToolButton iconName="add" onClick={() => setLineWidth(p => Math.min(50, p + 1))} label="Increase stroke" />
     </div>
 
-    <ToolButton icon={Grid} onClick={() => setGridVisible(!gridVisible)} label="Grid" active={gridVisible} />
-    <ToolButton icon={Settings} onClick={() => setShowSettings(true)} label="Settings" active={showSettings} />
-    <ToolButton icon={X} onClick={handleClear} label="Clear" />
-    <ToolButton icon={Download} onClick={handleSave} label="Save" />
+  <ToolButton iconName="grid_view" onClick={() => setGridVisible(!gridVisible)} label="Grid" active={gridVisible} />
+  <ToolButton iconName="settings" onClick={() => setShowSettings(true)} label="Settings" active={showSettings} />
+  {/* Use trashcan for Clear action */}
+  <ToolButton iconName="delete" onClick={handleClear} label="Clear" />
+  <ToolButton iconName="download" onClick={handleSave} label="Save" />
   </div>
 );
 

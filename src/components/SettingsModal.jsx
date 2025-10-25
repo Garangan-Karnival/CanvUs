@@ -1,5 +1,4 @@
 import React from 'react';
-import { X } from 'lucide-react';
 import './SettingsModal.css';
 
 const SettingsModal = ({ tempWidth, tempHeight, setTempWidth, setTempHeight, setShowSettings, setCanvasWidth, setCanvasHeight }) => {
@@ -21,7 +20,7 @@ const SettingsModal = ({ tempWidth, tempHeight, setTempWidth, setTempHeight, set
         <div className="settings-header">
           <h2 className="settings-title">Canvas Settings</h2>
           <button onClick={() => setShowSettings(false)} className="settings-close">
-            <X size={24} />
+            <span className="material-icons" aria-hidden="true">close</span>
           </button>
         </div>
         <form onSubmit={applySettings} className="settings-form">

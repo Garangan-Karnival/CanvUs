@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './Draw.css';
 import useCanvasHistory from '../hooks/useCanvasHistory';
-import { Palette, Pencil, Eraser, Grid, Download, X, Settings, Minus, Plus, RotateCcw, RotateCw, Square, Circle } from 'lucide-react';
 import Toolbar from '../components/Toolbar.jsx';
 import GridOverlay from '../components/GridOverlay.jsx';
 import SettingsModal from '../components/SettingsModal.jsx';
