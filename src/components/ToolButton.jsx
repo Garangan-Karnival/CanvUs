@@ -1,7 +1,7 @@
 import React from 'react';
 import './ToolButton.css';
 
-const ToolButton = ({ icon: Icon, onClick, label, active = false, disabled = false }) => (
+const ToolButton = ({ icon: Icon, iconName, onClick, label, active = false, disabled = false }) => (
   <button
     onClick={onClick}
     disabled={disabled}
@@ -9,7 +9,12 @@ const ToolButton = ({ icon: Icon, onClick, label, active = false, disabled = fal
     title={label}
     type="button"
   >
-    <Icon size={24} color="currentColor" />
+    {/* If iconName is provided, render a font icon (Material Icons); otherwise render component */}
+    {iconName ? (
+      <span className="material-icons tool-icon" aria-hidden="true">{iconName}</span>
+    ) : Icon ? (
+      <Icon className="tool-icon" size={20} aria-hidden="true" />
+    ) : null}
   </button>
 );
 
