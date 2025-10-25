@@ -1,0 +1,79 @@
+/* Basic styles for community page */
+.community-root {
+  padding: 20px;
+  color: black;
+}
+
+.share-box {
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.share-box input[type="file"] {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.share-box textarea {
+  width: 100%;
+  min-height: 60px;
+  resize: vertical;
+  margin-bottom: 8px;
+}
+
+.preview {
+  max-width: 200px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.share-btn {
+  padding: 8px 12px;
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.posts .post {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+}
+
+.post-image {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.post-body { flex: 1; }
+.post-caption { margin: 0 0 8px 0; font-weight: 600 }
+.comment { font-size: 13px; color: #374151; margin-bottom: 4px }
+.add-comment { display: flex; gap: 8px }
+.add-comment input { flex: 1; padding: 6px }
+.add-comment button { padding: 6px 8px }
+
+.comment-actions { display: flex; gap: 8px; align-items: center }
+.reply-link { background: transparent; border: none; color: rgba(0,0,0,0.6); cursor: pointer; padding: 0; font-size: 13px }
+.reply-link:hover { text-decoration: underline }
+.delete-link { background: transparent; border: none; color: #ef4444; cursor: pointer; padding: 4px 6px; border-radius: 4px }
+.delete-post { background: transparent; border: none; color: #ef4444; cursor: pointer }
+
+.replies { margin-left: 12px; margin-top: 6px }
+.reply-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px }
+
+.badge { background: #e5e7eb; color: #111827; padding: 2px 6px; border-radius: 999px; font-size: 11px; margin-left: 8px }
+.badge.you { background: #111827; color: #fff }
+
+.reply-box { display: flex; gap: 8px; margin-top: 8px }
+.reply-box input { flex: 1; padding: 6px }

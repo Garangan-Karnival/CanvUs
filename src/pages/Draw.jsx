@@ -184,6 +184,31 @@ const Draw = () => {
     link.click();
   };
 
+  const handleShareToCommunity = (captionText = '') => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const temp = document.createElement('canvas');
+    temp.width = canvas.width;
+    temp.height = canvas.height;
+    const ctx = temp.getContext('2d');
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, temp.width, temp.height);
+    ctx.drawImage(canvas, 0, 0);
+    const dataUrl = temp.toDataURL('image/png');
+
+    // lazy import to avoid circular dependencies
+    const { addPost } = require('../utils/communityStore');
+    addPost({ image: dataUrl, caption: captionText });
+    // optional: navigate to community page if using react-router
+    try {
+      const { useNavigate } = require('react-router-dom');
+      const navigate = useNavigate();
+      navigate('/community');
+    } catch (e) {
+      // ignore if not available in this scope
+    }
+  };
+
   return (
     <div className="draw-root">
       <h1 className="draw-title">My Drawspace</h1>
@@ -205,6 +230,7 @@ const Draw = () => {
         setShowSettings={setShowSettings}
         historyIndex={historyIndex}
         historyLength={history.length}
+        onShareToCommunity={handleShareToCommunity}
       />
 
       <div
