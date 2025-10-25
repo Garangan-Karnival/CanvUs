@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
+import { Home, Info, Library, Pencil, Users } from "lucide-react";
 
 function Sidebar() {
   return (
@@ -8,27 +9,32 @@ function Sidebar() {
       <h2 className="logo">CanvUs</h2>
       <nav>
         <NavLink to="/" end className="nav-item">
-            <span className="icon">🏠</span>
+            <Home className="icon" />
             Home
         </NavLink>
         <NavLink to="/about" className="nav-item">
-            <span className="icon">ℹ️</span>
+            <Info className="icon" />
             About
         </NavLink>
         <NavLink to="/library" className="nav-item">
-            <span className="icon">📚</span>
+            <Library className="icon" />
             Library
         </NavLink>
         <NavLink to="/draw" className="nav-item">
-            <span className="icon">✏️</span>
+            <Pencil className="icon" />
             Draw
         </NavLink>
         <NavLink to="/community" className="nav-item">
-            <span className="icon">👥</span>
+            <Users className="icon" />
             Community
         </NavLink>
       </nav>
-      <p>©CanvUs</p>
+      <div className="footer">
+      <p>Insta: @canvusisus</p>
+      <p>X: @CanvUs</p>
+      <p>Email us at: canvUs@gmail.com</p>
+      </div>
+      <p>Copyright ©CanvUs</p>
     </div>
   );
 }

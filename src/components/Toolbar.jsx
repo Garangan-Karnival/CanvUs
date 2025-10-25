@@ -6,7 +6,7 @@ const Toolbar = ({
   tool, setTool, color, setColor, lineWidth, setLineWidth,
   handleUndo, handleRedo, handleClear, handleSave,
   gridVisible, setGridVisible, showSettings, setShowSettings,
-  historyIndex, historyLength
+  historyIndex, historyLength, onSaveToLibrary
 }) => (
   <div className="toolbar">
   <ToolButton iconName="undo" onClick={handleUndo} label="Undo" disabled={historyIndex <= 0} />
@@ -39,6 +39,7 @@ const Toolbar = ({
   {/* Use trashcan for Clear action */}
   <ToolButton iconName="delete" onClick={handleClear} label="Clear" />
   <ToolButton iconName="download" onClick={handleSave} label="Save" />
+  <ToolButton iconName="download" onClick={() => onSaveToLibrary && onSaveToLibrary()} label="Library" />
   </div>
 );
 

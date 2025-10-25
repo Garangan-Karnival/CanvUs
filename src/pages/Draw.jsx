@@ -4,6 +4,7 @@ import useCanvasHistory from '../hooks/useCanvasHistory';
 import Toolbar from '../components/Toolbar.jsx';
 import GridOverlay from '../components/GridOverlay.jsx';
 import SettingsModal from '../components/SettingsModal.jsx';
+import { addImage } from '../utils/libraryStore';
 
 const Draw = () => {
   const [tool, setTool] = useState('pencil');
@@ -208,6 +209,22 @@ const Draw = () => {
     }
   };
 
+  const handleSaveToLibrary = (captionText = '') => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const temp = document.createElement('canvas');
+    temp.width = canvas.width;
+    temp.height = canvas.height;
+    const ctx = temp.getContext('2d');
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, temp.width, temp.height);
+    ctx.drawImage(canvas, 0, 0);
+    const dataUrl = temp.toDataURL('image/png');
+
+    addImage({ image: dataUrl, caption: captionText });
+    try { alert('Saved to Library'); } catch (e) { /* ignore */ }
+  };
+
   return (
     <div className="draw-root">
       <h1 className="draw-title">My Drawspace</h1>
@@ -230,6 +247,7 @@ const Draw = () => {
         historyIndex={historyIndex}
         historyLength={history.length}
         onShareToCommunity={handleShareToCommunity}
+        onSaveToLibrary={handleSaveToLibrary}
       />
 
       <div

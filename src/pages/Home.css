@@ -7,12 +7,12 @@
 }
 
 .showcase h2 {
-    color: #4682A4;
+    color: black;
 }
 
 .welcomeTitle {
   text-align: center;
-  color: #4682a9;
+  color: black;
 }
 
 .buttons {
@@ -37,8 +37,8 @@
 }
 
 .home-button:hover {
-  background-color: rgb(116, 155, 194);
-  color: rgba(000, 000, 000, 0.75);
+  background-color: rgb(70, 130, 169);
+  color: rgb(255, 255, 255);
 }
 
 .showcase {
